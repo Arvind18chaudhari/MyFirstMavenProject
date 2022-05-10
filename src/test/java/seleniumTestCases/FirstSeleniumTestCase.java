@@ -25,13 +25,17 @@ public class FirstSeleniumTestCase {
 
     @Test
     public void testSearchGoogle(){
+        System.out.println("********** In Test Method **********");
         driver.findElement(By.name("q")).sendKeys("Selenium Testing tutorial");
+        System.out.println("********** Searched Selenium Testing tutorial **********");
         driver.findElement(By.name("q")).submit();
         String actual = driver.getTitle();
         Assert.assertEquals(actual,"Selenium Testing tutorial - Google Search");
+        System.out.println("********** title verified **********");
         driver.findElement(By.linkText("Selenium Tutorial - javatpoint")).click();
         actual = driver.getTitle();
         Assert.assertEquals(actual,"Selenium Tutorial - javatpoint");
+        System.out.println("********** second title verified **********");
     }
 
     @AfterMethod
