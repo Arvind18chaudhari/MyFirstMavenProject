@@ -2,6 +2,7 @@ package seleniumTestCases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -9,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 public class FirstSeleniumTestCase {
     WebDriver driver;
@@ -32,7 +34,8 @@ public class FirstSeleniumTestCase {
         String actual = driver.getTitle();
         Assert.assertEquals(actual,"Selenium Testing tutorial - Google Search");
         System.out.println("********** title verified **********");
-        driver.findElement(By.linkText("Selenium Tutorial - javatpoint")).click();
+        List<WebElement> list = driver.findElements(By.partialLinkText("Selenium Tutorial - javatpoint"));
+        list.get(0).click();
         actual = driver.getTitle();
         Assert.assertEquals(actual,"Selenium Tutorial - javatpoint");
         System.out.println("********** second title verified **********");
