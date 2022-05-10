@@ -28,7 +28,7 @@ public class FirstSeleniumTestCase {
         driver.findElement(By.name("q")).sendKeys("Selenium Testing");
         driver.findElement(By.name("q")).submit();
         String actual = driver.getTitle();
-        Assert.assertEquals(actual,"selenium testing - Google Search");
+        Assert.assertEquals(actual,"Selenium testing - Google Search");
     }
 
     @AfterMethod
