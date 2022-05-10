@@ -1,0 +1,8 @@
+<suite name="Test suite name">
+    <test name="test name is maven test">
+        <packages>
+            <package name ="testngPackage.*"/>
+        </packages>
+
+    </test>
+</suite>
