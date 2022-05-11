@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,7 +20,9 @@ public class FirstSeleniumTestCase {
     public void setup(){
         System.out.println("********** initiating selenium test case **********");
         System.setProperty("webdriver.chrome.driver","./src/test/resources/Drivers/chromedriver.exe");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         driver.manage().window().fullscreen();
         driver.get("https://www.google.com/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
